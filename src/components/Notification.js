@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Transition from 'react-transition-group/Transition';
 import { uniqueId, omit } from 'lodash';
 
@@ -77,4 +79,13 @@ const NotificationMessage = ({ show, transitionDuration, height, children, ...pr
       ...transitionStyles[transitionStatus]
     }}>{children}</div>}
   </Transition>;
+};
+
+Notification.propTypes = {
+  children: PropTypes.any,
+  showMessageDuration: PropTypes.number,
+};
+
+NotificationController.propTypes = {
+  uniqueId: PropTypes.any,
 };
